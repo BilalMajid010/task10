@@ -3,38 +3,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Internship Journey</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="header">
-        <nav class="container nav">
-            <a class="logo" href="#home">Project</a>
+        <nav class="container nav" aria-label="Main navigation">
+            <a class="logo" href="#home">Pathway<span>.</span></a>
             <div class="nav-links">
-                <a class="active" href="#home">Home</a>
+                <a class="active" href="#home" aria-current="page">Home</a>
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#roadmap">Roadmap</a>
                 <a href="#assignments">Assignments</a>
                 <a href="#contact">Contact</a>
             </div>
-            <button id="themeToggle" type="button">Toggle theme</button>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">
+                Dark mode
+            </button>
         </nav>
     </header>
 
-    <main>
+    <main id="main">
         <section class="hero section" id="home">
             <div class="container hero-grid">
                 <div>
                     <p class="eyebrow">MY INTERNSHIP JOURNEY</p>
                     <h1>Learning today.<br><span>Building tomorrow.</span></h1>
-                    <p>I'm a software engineering graduate developing practical web development skills through training and projects.</p>
-                    <a class="button" href="#assignments">View Assignments</a>
+                    <p>I am a software engineering graduate developing practical web development skills through training and projects.</p>
+                    <div class="actions">
+                        <a class="button" href="#assignments">View assignments</a>
+                        <a class="button button-outline" href="#contact">Contact me</a>
+                    </div>
                 </div>
-                <div class="hero-card">
-                    <div class="avatar">BM</div>
-                    <h2>Web Developer</h2>
+                <div class="hero-media">
+                    <img src="https://placehold.co/600x400/5b4bdb/ffffff?text=Web+Development"
+                         alt="Web development illustration">
                 </div>
             </div>
         </section>
@@ -43,11 +51,11 @@
             <div class="container two-column">
                 <div>
                     <p class="eyebrow">ABOUT ME</p>
-                    <h2>My Journey</h2>
-                    <p>I am improving my web development skills by practicing HTML, CSS, JavaScript, and React. My goal is to build accessible, responsive websites and practical applications.</p>
+                    <h2>My journey</h2>
+                    <p>I am improving my web development skills through practical projects, focusing on responsive design, accessible interfaces, JavaScript, and React.</p>
                 </div>
                 <div class="card">
-                    <h3>Quick Information</h3>
+                    <h3>Quick information</h3>
                     <p>Education: Software Engineering</p>
                     <p>Focus: Web Development</p>
                     <p>Availability: Open to opportunities</p>
@@ -58,23 +66,31 @@
         <section class="section soft" id="skills">
             <div class="container">
                 <p class="eyebrow">MY SKILLS</p>
-                <h2>Technologies I'm Learning</h2>
+                <h2>Technologies I am learning</h2>
                 <div class="skills-grid">
                     <article class="card skill-card">
-                        <h3>HTML</h3>
-                        <p>Page structure, forms, and semantic elements.</p>
+                        <div class="skill-content">
+                            <h3>HTML</h3>
+                            <p>Semantic structure, forms, and tables.</p>
+                        </div>
                     </article>
                     <article class="card skill-card">
-                        <h3>CSS</h3>
-                        <p>Responsive layouts, Grid, Flexbox, and styling.</p>
+                        <div class="skill-content">
+                            <h3>CSS</h3>
+                            <p>Responsive layouts, Grid, and Flexbox.</p>
+                        </div>
                     </article>
                     <article class="card skill-card">
-                        <h3>JavaScript</h3>
-                        <p>DOM manipulation, events, and APIs.</p>
+                        <div class="skill-content">
+                            <h3>JavaScript</h3>
+                            <p>DOM manipulation, events, and APIs.</p>
+                        </div>
                     </article>
                     <article class="card skill-card">
-                        <h3>React</h3>
-                        <p>Components, props, and state.</p>
+                        <div class="skill-content">
+                            <h3>React</h3>
+                            <p>Components, props, and state.</p>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -83,10 +99,10 @@
         <section class="section" id="roadmap">
             <div class="container">
                 <p class="eyebrow">MY PROGRESS</p>
-                <h2>Learning Roadmap</h2>
+                <h2>Learning roadmap</h2>
                 <div class="roadmap">
                     <article class="roadmap-item">
-                        <h3>HTML Fundamentals</h3>
+                        <h3>HTML fundamentals</h3>
                         <p>Completed: structure, forms, and tables.</p>
                     </article>
                     <article class="roadmap-item">
@@ -98,8 +114,8 @@
                         <p>In progress: events and APIs.</p>
                     </article>
                     <article class="roadmap-item">
-                        <h3>React Projects</h3>
-                        <p>Upcoming: reusable components and applications.</p>
+                        <h3>React projects</h3>
+                        <p>Upcoming: components and applications.</p>
                     </article>
                 </div>
             </div>
@@ -108,55 +124,57 @@
         <section class="section soft" id="assignments">
             <div class="container">
                 <p class="eyebrow">TASK TRACKER</p>
-                <h2>Internship Assignments</h2>
+                <h2>Internship assignments</h2>
+
+                <div class="alert" role="status">Track each assignment and update its status as you progress.</div>
 
                 <div class="assignments-grid">
                     <article class="card">
                         <span class="badge completed">Completed</span>
-                        <h3>HTML Profile Page</h3>
+                        <h3>HTML profile page</h3>
                         <p>Create a structured personal profile.</p>
                     </article>
                     <article class="card">
-                        <span class="badge progress">In Progress</span>
-                        <h3>Responsive Website</h3>
+                        <span class="badge progress">In progress</span>
+                        <h3>Responsive website</h3>
                         <p>Build a website using responsive CSS.</p>
                     </article>
                     <article class="card">
                         <span class="badge pending">Pending</span>
-                        <h3>Interactive Application</h3>
+                        <h3>Interactive application</h3>
                         <p>Practice JavaScript interactions.</p>
                     </article>
                 </div>
 
                 <div class="table-wrapper">
                     <table>
-                        <caption>Weekly Progress</caption>
+                        <caption>Weekly progress</caption>
                         <thead>
                             <tr>
-                                <th>Week</th>
-                                <th>Topic</th>
-                                <th>Tasks</th>
-                                <th>Status</th>
+                                <th scope="col">Week</th>
+                                <th scope="col">Topic</th>
+                                <th scope="col">Tasks</th>
+                                <th scope="col">Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>01</td>
-                                <td>HTML</td>
-                                <td>3/3</td>
-                                <td>Completed</td>
+                                <td data-label="Week">01</td>
+                                <td data-label="Topic">HTML</td>
+                                <td data-label="Tasks">3/3</td>
+                                <td data-label="Status">Completed</td>
                             </tr>
                             <tr>
-                                <td>02</td>
-                                <td>CSS</td>
-                                <td>2/4</td>
-                                <td>In Progress</td>
+                                <td data-label="Week">02</td>
+                                <td data-label="Topic">CSS</td>
+                                <td data-label="Tasks">2/4</td>
+                                <td data-label="Status">In progress</td>
                             </tr>
                             <tr>
-                                <td>03</td>
-                                <td>JavaScript</td>
-                                <td>0/3</td>
-                                <td>Pending</td>
+                                <td data-label="Week">03</td>
+                                <td data-label="Topic">JavaScript</td>
+                                <td data-label="Tasks">0/3</td>
+                                <td data-label="Status">Pending</td>
                             </tr>
                         </tbody>
                     </table>
@@ -166,12 +184,12 @@
 
         <section class="section" id="faq">
             <div class="container">
-                <h2>Frequently Asked Questions</h2>
-                <details>
+                <h2>Frequently asked questions</h2>
+                <details class="faq-item">
                     <summary>Which technologies am I learning?</summary>
                     <p>HTML, CSS, JavaScript, and React.</p>
                 </details>
-                <details>
+                <details class="faq-item">
                     <summary>What is my current goal?</summary>
                     <p>To improve my skills through practical projects.</p>
                 </details>
@@ -182,28 +200,33 @@
             <div class="container two-column">
                 <div>
                     <p class="eyebrow">GET IN TOUCH</p>
-                    <h2>Contact Me</h2>
+                    <h2>Contact me</h2>
                     <p>Send a message about an internship or project opportunity.</p>
                 </div>
 
-                <form class="card contact-form" action="#" method="get">
-                    <label for="name">Full Name *</label>
-                    <input id="name" name="name" type="text" placeholder="Your name" required minlength="2">
+                <form class="card contact-form" action="#" method="post">
+                    <label for="name">Full name <span>*</span></label>
+                    <input id="name" name="name" type="text" placeholder="Your name"
+                           required minlength="2">
 
-                    <label for="email">Email *</label>
-                    <input id="email" name="email" type="email" placeholder="you@example.com" required>
+                    <label for="email">Email <span>*</span></label>
+                    <input id="email" name="email" type="email"
+                           placeholder="you@example.com" required>
 
                     <label for="topic">Topic</label>
                     <select id="topic" name="topic">
                         <option value="">Choose a topic</option>
-                        <option>Internship</option>
-                        <option>Project</option>
+                        <option value="internship">Internship</option>
+                        <option value="project">Project</option>
                     </select>
 
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" placeholder="Write your message" required minlength="10"></textarea>
+                    <label for="message">Message <span>*</span></label>
+                    <textarea id="message" name="message" rows="4"
+                              placeholder="Write your message" required minlength="10"></textarea>
 
-                    <button class="button" type="submit">Send Message</button>
+                    <button class="button" type="submit">Send message</button>
+                    <button class="button button-disabled" type="button" disabled>Unavailable</button>
+                    <p class="form-note">Required fields are marked with *.</p>
                 </form>
             </div>
         </section>
@@ -212,7 +235,7 @@
     <footer class="footer">
         <div class="container footer-grid">
             <div>
-                <h3>Project</h3>
+                <h3>Pathway</h3>
                 <p>Learning and building through practical projects.</p>
             </div>
             <div>
@@ -222,18 +245,12 @@
                 <a href="#assignments">Assignments</a>
             </div>
             <div>
-                <h3>Contact</h3>
-                <a href="#contact">Get in touch</a>
+                <h3>Connect</h3>
+                <a href="#contact">Contact me</a>
                 <a href="#home">Back to top</a>
             </div>
         </div>
         <p class="copyright">© 2026 Internship Journey</p>
     </footer>
-
-    <script>
-        document.getElementById("themeToggle").addEventListener("click", function () {
-            document.body.classList.toggle("dark-theme");
-        });
-    </script>
 </body>
 </html>
